@@ -1,0 +1,70 @@
+package com.kh.bookmanager.rent;
+
+import java.sql.Date;
+
+import lombok.Data;
+@Data
+public class RentBook {
+
+	private long rbIdx;
+	private long rmIdx;
+	private long bkIdx;
+	private Date regDate;
+	private String state;
+	private Date returnDate;
+	private int extensionCnt;
+	
+	public String getRbIdx() {
+		return rbIdx;
+	}
+	public void setRbIdx(String rbIdx) {
+		this.rbIdx = rbIdx;
+	}
+	public String getRmIdx() {
+		return rmIdx;
+	}
+	public void setRmIdx(String rmIdx) {
+		this.rmIdx = rmIdx;
+	}
+	public String getBkIdx() {
+		return bkIdx;
+	}
+	public void setBkIdx(String bkIdx) {
+		this.bkIdx = bkIdx;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public Date getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+	public int getExtensionCnt() {
+		return extensionCnt;
+	}
+	public void setExtensionCnt(int extensionCnt) {
+		this.extensionCnt = extensionCnt;
+	}
+	@Override
+	public String toString() {
+		return "RentBook [rbIdx=" + rbIdx + ", rmIdx=" + rmIdx + ", bkIdx=" + bkIdx + ", regDate=" + regDate
+				+ ", state=" + state + ", returnDate=" + returnDate + ", extensionCnt=" + extensionCnt + "]";
+	}
+	
+	
+	
+	
+	
+
+}

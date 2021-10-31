@@ -1,0 +1,83 @@
+package com.kh.bookmanager.member;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.kh.bookmanager.common.jpa.JpaTemplate;
+
+//Service 
+//웹어플리케이션의 비지니스로직 작성
+//사용자의 요청을 컨트롤러로 부터 위임받아 해당 요청을 처리하기 위한 핵심적인 작업을 진행
+//요청을 처리하기 위해 데이터베이스에 저장된 데이터가 필요하면 Dao에게 요청
+//비지니스 로직을 Service가 담당하기 때문에 Transaction 관리도 Service가 담당.
+//commit,rollback을 Service 클래스에서 처리
+public class MemberService {
+	
+	private MemberRepository memberRepository = new MemberRepository();
+	
+	public Member memberAuthenticate(String userId, String password) {
+		
+		EntityManager em =  JpaTemplate.createEntityManager();
+		//find() : 조회
+		
+	
+		
+		try {
+			Member member = em.find(Member.class,userId);
+			if(member == null) return null;
+			if(member.getPassword().equals(password)) return member;
+		} finally {
+			em.close();
+		}
+		
+		
+		return null;
+	}
+
+	public Member selectMemberById(String userId) {
+		EntityManager em =  JpaTemplate.createEntityManager();
+		List<Member> members = new ArrayList<>();
+		try {
+			
+		} finally {
+			em.close();
+		}
+		
+		return null;
+	}
+
+	public List<Member> findAllMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public int insertMember(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int updateMember(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int deleteMember(String userId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

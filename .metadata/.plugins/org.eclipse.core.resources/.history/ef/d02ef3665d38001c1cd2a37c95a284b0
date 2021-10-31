@@ -1,0 +1,16 @@
+package com.kh.bookmanager.rent;
+
+import java.sql.Date;
+
+import lombok.Data;
+
+@Data
+public class Rent {
+
+	private long rmIdx;
+	private String userId;
+	private Date regDate;
+	private int isReturn;
+	private String title;
+	private int rentBookCnt;
+	}

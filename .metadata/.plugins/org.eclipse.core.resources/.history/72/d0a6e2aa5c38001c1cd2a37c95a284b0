@@ -1,0 +1,35 @@
+package com.kh.bookmanager.book;
+
+import java.sql.Date;
+
+import lombok.Data;
+
+@Data
+public class Book {
+
+	private long bkIdx;
+	private String isbn;
+	private String category;
+	private String title;
+	private String author;
+	private String info;
+	private int bookAmt;
+	private Date regDate;
+	private int rentCnt;
+	
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
