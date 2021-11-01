@@ -1,6 +1,7 @@
 package com.kh.bookmanager.book;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Book {
 	@Column(columnDefinition = "number default 1")
 	private Integer bookAmt;
 	@Column(columnDefinition = "date default  sysdate")
-	private Date regDate;
+	private LocalDateTime regDate;
 	@Column(columnDefinition = "number default 0")
 	private Integer rentCnt;
 	
