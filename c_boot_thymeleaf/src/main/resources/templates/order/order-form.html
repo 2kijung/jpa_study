@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+   span{
+      font-size: 1.5vw;
+      color: red;
+   }
+</style>
+</head>
+<body>
+   <h1>주문 시스템</h1>
+   <h2>메뉴를 선택하세요</h2>
+
+   <form action="/order/order" method="post">
+   
+      <select name="food" multiple="multiple" style="width:300px">
+         <option value="피자">피자</option>
+         <option value="햄버거">햄버거</option>
+         <option value="치킨">치킨</option>
+         <option value="회">회</option>
+      </select>
+      
+      <button>전송</button>
+   </form>
+</body>
+</html>
+<!-- 
+1. order-form.html(메뉴판)을 요청하는 url은 GET : /order/order-form이다
+2. 음식의 가격은 피자 30,000원 
+	         햄버거 5,000원
+	         회 20,000원
+	         치킨 : 18,000원
+3. receipt.html에서는 사용자가 선택한 메뉴의 이름과 가격, 결제금액이 출력되어야한다.
+ -->

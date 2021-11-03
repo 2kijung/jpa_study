@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="~{fragments :: flg_head}">
+	</th:block>
+<style type="text/css">
+   h1{
+      color:navy;
+   }
+</style>
+</head>
+<body th:with="var='<i>내가 제일 좋아하는 언어 점수 : </i>'">
+<h1>Thymeleaf 공부하기</h1>
+<h2>1. 변수를 선언하고 출력해보기</h2>
+<pre>
+   변수선언 => th:with
+   변수출력 => ${...}
+   선언된 변수의 스코프는 해당 변수가 선언된 html 태그이다. 형제태그나 부모태그에서는 사용할 수 없다.
+   변수를 문자열 리터럴 과 함께 사용하기 위해 |abc${...}|형태로 사용한다.
+</pre>
+<span th:text="${var}">타임리프 변수 출력</span>
+
+<h2> 2. 인라인 표현식</h2>
+<pre th:text="|[[]] 를 사용해 인라인표현식으로 변수를 출력할 수 있다.|" ></pre>
+<span>[[${var}]](inline 표현식)</span>
+
+<h2>3. 선택 변수 표현식</h2>
+<div th:object="${session.userInfo}">
+   <p th:text="|아이디 : *{userId}|"/>
+   <p th:text="|비밀번호 : *{password}|"/>
+   <p th:text="|휴대폰번호 : *{tell}|"/>
+   <p th:text="|등급 : *{grade}|"/>
+   <p th:text="|해쉬코드 : *{printHashCode}|"/>
+</div>
+
+<h2>4. 링크 표현식</h2>
+<pre>
+	링크 표현식 : @{...}
+	링크 표현식의 장점
+	1. context path를 자동으로 추가 해준다.
+	2. url queryString을 편하게 적성할 수 있다.
+</pre>
+<a th:href="@{https://www.naver.com(test=100,name=lkj)}">네이버에게 여러개의 파라미터를 쿼리스트링을 사용해 전달</a><br/>
+<a th:href="@{https://www.naver.com(test=${session.userInfo.userId})}">네이버에게 사용자의 아이디를 전달해보자.</a>
+
+<h2>5. message 표현식</h2>
+<pre>
+	message 표현식 #{...}
+	message.properties에 작성한 속성의 값을 불러와 출력
+</pre>
+<p th:text="#{toy.domain}"></p>
+<p th:text="#{toy.smtp.id}"></p>
+
+<h2>6.fragment 표현식</h2>
+<pre>
+	fragment 표현식 : ~{...}
+	th:insert : html 태그의 안으로 fragment를 추가
+	th:replace : html 태그를 fragment로 대체
+</pre>
+<div th:insert="~{fragments :: example}"></div>
+<div th:replace="~{fragments :: example}"></div>
+
+<h2>7. unescape 처리</h2>
+<pre th:text="|th:utext 속성을 사용,[(...)]을 사용|"></pre>
+<p th:utext="|th:utext 속성을 사용 : ${var}"></p>
+<p>인라인 표현식에서의 unescape 처리 : [(${var})]</p>
+
+<h2>8. th:attr / th:attrappend / th:atteprepend</h2>
+<div style="background-color: yellow" th:attr="style=|color:${color}|,id='attr'">th:attr</div>
+<div style="background-color: yellow"th:attrappend="style=';color:red'">th:attrappend</div>
+<div style="background-color: blue"th:attrprepend="style='color:white;'">th:atteprepend</div>
+
+<h2>9. 조건문 / 반복문 사용하기</h2>
+<h3>if / unless</h3>
+<p th:if="${score.avg >= 60}">[[${session.userInfo.userId}]]님 합격하였습니다.</p>
+<p th:unless="${score.avg >= 60}">[[${session.userInfo.userId}]]님은 불합격하였습니다.</p>
+
+<h3>each / switch case</h3>
+<h4 th:text="|${session.userInfo.userId}의 과목별 학점|"></h4>
+<ul>
+	<li th:each="entry : ${score}" th:switch="${entry.value/10}" th:unless="${entry.key=='avg'}">
+		과목명 : [[${entry.key}]] : [[${entry.value}]] 점
+		<th:block th:case="${10}">(A++)</th:block>
+		<th:block th:case="${9}">(A)</th:block>
+		<th:block th:case="${8}">(B)</th:block>
+		<th:block th:case="${7}">(C)</th:block>
+		<th:block th:case="${6}">(D)</th:block>
+		<th:block th:case="*">(F)</th:block>
+	</li>
+</ul>
+<h2>원하는 횟수만큼 반복하는 반복문</h2>
+<div th:each="var,status : ${#numbers.sequence(1,10,1)}" style="border: 1px" >
+	값 : [[${var}]]<br>
+	status.index :[[${status.index}]]<br>
+	status.count :[[${status.count}]]<br>
+	status.size :[[${status.size}]]<br>
+	status.current :[[${status.current}]]<br>
+	status.even :[[${status.even}]]<br>
+	status.odd :[[${status.odd}]]<br>
+	status.first :[[${status.first}]]<br>
+	status.last :[[${status.last}]]<br>
+</div>
+</body>
+</html>
