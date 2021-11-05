@@ -1,5 +1,0 @@
-package com.kh.bookmanager.common.jpa;
-
-public class JpaTemplate {
-
-}

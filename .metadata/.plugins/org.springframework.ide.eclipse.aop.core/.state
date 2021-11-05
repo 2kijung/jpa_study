@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="c_boot_thymeleaf"/>
 <aop-project name="b_boot_jpa"/>
+<aop-project name="d_boot_toy"/>
 </aop-reference-model>

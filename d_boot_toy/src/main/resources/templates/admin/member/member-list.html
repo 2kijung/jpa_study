@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="fragments :: frg_head"></th:block>
+</head>
+<body>
+<h1>회원 목록</h1>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>아이디</th>
+			<th>휴대폰번호</th>
+			<th>이메일</th>
+			<th>탈퇴처리</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="member : ${members}" th:object="${member}">
+			<td th:text="*{userId}"></td>
+			<td th:text="*{tell}"></td>
+			<td th:text="*{email}"></td>
+			<td><a href="/admin/member/leave">탈퇴처리</a></td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

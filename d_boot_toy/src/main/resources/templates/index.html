@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="fragments :: frg_head"></th:block>
+	<style type="text/css">
+		.valid-msg{color:red; font-size:0.5vw;}
+	</style>
+</head>
+<body>
+
+<h1 style="text-align: center;">PCLASS TOY PROJECT</h1>
+<span class="valid-msg" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></span>
+
+<th:block th:if="${session.authentication == null}">
+	<h2><a href="/member/login">login</a></h2>
+	<h2><a href="/member/join">회원가입</a></h2>
+</th:block>
+<th:block th:unless="${session.authentication == null}">
+	<h2>[[${session.authentication.userId}]]님 안녕?</h2>
+	<h2><a href="/member/logout">logout</a></h2>
+	<h2><a href="/member/mypage">마이페이지</a></h2>
+	<h2><a href="/board/board-form">게시글 작성</a></h2>
+	<h2><a href="/admin/member/member-list">멤버리스트</a></h2>
+</th:block>
+
+</body>
+</html>

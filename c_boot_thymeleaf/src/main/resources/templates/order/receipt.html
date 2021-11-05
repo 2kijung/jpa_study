@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/b_jsp/resources/css/all.css">
+<script type="text/javascript" src="/b_jsp/resources/js/webUtil.js"></script>
 </head>
 <body>
+
+   <h1>주문 결과</h1>
+   
+   <hr>
+   
+   <ol>   
+   <li th:each="order : ${orders}" th:text="|${order.name}:${order.price}|"></li>
+   </ol>
+   
+   <span th:unless="${orders.isEmpty}">
+           주문하신
+           <th:block th:each="order, status:${orders}">
+           		<th:block th:if="${status.first}">
+           			[[${order.name}]]
+           		</th:block>
+           		<th:block th:if="${not status.first}">
+           			/ [[${order.name}]]
+           		</th:block>
+           </th:block>
+           결제금액은 [[${payPrice}]]원 입니다.        
+   </span>   
+   <span th:if="${orders.isEmpty}" th:text="|주문내역이 존재하지 않습니다.|"></span>
+   <h3>* 이용해 주셔서 감사합니다.</h3>
 
 </body>
 </html>

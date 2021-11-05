@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="fragments :: frg_head"></th:block>
+<link rel="stylesheet" href="/css/board/board.css"/>
+</head>
+<body>
+<div class="content">
+
+   <h2 class="tit">게시판</h2>
+   <div class="info">
+      <span th:text="|번호 : ${board.bdIdx}|"></span>
+      <span th:text="|제목 : ${board.title}|"></span>
+      <span th:text="|등록일 : ${board.regDate}|"></span>
+      <span th:text="|작성자 : ${board.member.userId}|"></span>
+   </div>
+   <div class="info file_info">
+      <ol th:unless="${board.fileInfos.isEmpty}">
+         <li th:each="file : ${board.fileInfos}" th:object="${file}">
+            <a th:onclick="downloadQueryString([[*{originFileName}]],[[*{renameFileName}]],[[*{savePath}]])">
+               [[*{originFileName}]]</a>
+         </li>
+      </ol>
+   </div>
+   
+   <div class="article_content">
+      <pre>[[${board.content}]]</pre>
+   </div>
+   
+</div>
+
+<script type="text/javascript">
+   let downloadQueryString = (originFileName, renameFileName, savePath) => {
+      let paramObj = {'originFileName':originFileName
+            ,'renameFileName':renameFileName
+            ,'savePath':savePath};
+      
+      location.href='/download?' + urlEncoder(paramObj);
+   }
+
+</script>
+
+
+</body>
+</html>
