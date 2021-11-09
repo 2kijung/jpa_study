@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<th:block th:replace="fragments :: frg_head"></th:block>
+<link rel="stylesheet" href="/css/board/board.css"/>
+</head>
+<body>
+
+<div class="content">
+	<h2 class="tit">*게시판</h2>
+	<div class="desc_board">
+		<form action="/board/modify" method="post" enctype="multipart/form-data">
+			<div>
+				<div class="tit_board">
+					제목 : <input th:value="${board.title}" type="text" name="title" required="required"/><br>
+					파일 : <input type="file" name="files" id="contract_file" multiple/>
+				</div>
+				<hr>
+					<div class="info file_info">
+						<ol th:unless="${board.fileInfos.isEmpty}">
+							<li  th:each="file : ${board.fileInfos}" th:object="${file}"
+								th:onclick="|removeFile(this, [[*{flIdx}]])|">
+								<a>[[*{originFileName}]]<b> x</b></a>
+							</li>
+						</ol>
+					</div>
+				<div class="content_board">
+					<textarea name="content" readonly="readonly" required="required"
+						th:text="${board.content}"
+					></textarea>
+				</div>
+				<div class="btn_section">
+					<button style="background-color:red; color:white; width:100%">전송</button>
+				</div>
+			</div>
+			<input type="hidden" name="bdIdx" th:value="${board.bdIdx}"/>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+let removeFile = (e,flIdx) =>{
+	e.style.display='none';//화면상에서 삭제
+	
+	//서버에서 파일 삭제를 하기 위해 요청파라미터로 삭제될 파일의 flIdx를 넘김
+	let hiddenTag = document.createElement('input');
+	hiddenTag.type = 'hidden';
+	hiddenTag.name='removeFlIdx';
+	hiddenTag.value=flIdx;
+	document.querySelector('form').append(hiddenTag);
+	
+	
+}
+</script>
+</body>
+</html>

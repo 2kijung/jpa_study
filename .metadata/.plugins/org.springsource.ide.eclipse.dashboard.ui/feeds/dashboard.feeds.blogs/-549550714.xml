@@ -5,7 +5,44 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-11-04T20:00:00Z</updated>
+  <updated>2021-11-08T19:00:00Z</updated>
+  <entry>
+    <title>Update on EOL for Spring Security OAuth</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/11/08/update-on-eol-for-spring-security-oauth" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2021-11-08:4597</id>
+    <updated>2021-11-08T19:00:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;In May 2020, we &lt;a href="https://spring.io/blog/2020/05/07/end-of-life-for-spring-security-oauth"&gt;announced&lt;/a&gt; that the &lt;a href="https://spring.io/projects/spring-security-oauth"&gt;Spring Security OAuth&lt;/a&gt; (legacy) project will reach end-of-life in May 2022. The same end-of-life timeline applies to the &lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot"&gt;Spring Boot 2 auto-configuration project&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We are now 6 months away from the EOL date, and the currently supported version branch is 2.5.x, which is limited to security fixes only.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We recently &lt;a href="https://spring.io/blog/2021/08/19/spring-authorization-server-goes-to-production"&gt;announced&lt;/a&gt; the release of Spring Authorization Server 0.2.0, which is the first officially supported production-ready version backed by our new &lt;a href="https://github.com/spring-projects/spring-authorization-server/blob/main/SUPPORT_POLICY.adoc"&gt;support policy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We encourage users to migrate their applications to Spring Authorization Server 0.2.0, as it is a direct replacement for the OAuth 2.0 Authorization Server support provided by Spring Security OAuth (legacy).&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.8.4 and 2.9.1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/11/05/spring-cloud-data-flow-2-8-4-and-2-9-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2021-11-05:4596</id>
+    <updated>2021-11-05T10:09:09Z</updated>
+    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the release of 2.8.4 and 2.9.1&lt;/p&gt;
+&lt;p&gt;Releases &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.9.1"&gt;2.9.1&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.8.4"&gt;2.8.4&lt;/a&gt; contains a quick bug fix and more changes were made in &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.9.0"&gt;2.9.0&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.8.3"&gt;2.8.3&lt;/a&gt;. For complete list of changes for &lt;code&gt;2.9.x&lt;/code&gt; you can see its milestone and rc notes in &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases"&gt;releases&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Bootiful Podcast: Legend, Dutchess founder, Devoxx4Kids contributor, and fellow Java Champion Linda van der Pal</title>
     <link rel="alternate" href="https://spring.io/blog/2021/11/04/bootiful-podcast-legend-dutchess-founder-devoxx4kids-contributor-and-fellow-java-champion-linda-van-der-pal" />
@@ -795,37 +832,6 @@ items:&#xD;
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.6"&gt;43 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.6/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.4.12 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/10/21/spring-boot-2-4-12-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2021-10-21:4576</id>
-    <updated>2021-10-21T12:20:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Update (2021-10-26):&lt;/strong&gt; Multiple Spring projects included in this release contain fixes for security issues. Please, read the related &lt;a href="https://spring.io/blog/2021/10/26/security-reports-for-spring-framework-spring-data-rest-spring-amqp-and-spring-cloud-openfeign"&gt;announcement&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.4.12&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.4.12"&gt;36 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.4.12/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 5.3.12 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/10/21/spring-framework-5-3-12-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2021-10-21:4575</id>
-    <updated>2021-10-21T08:06:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Update (2021-10-26):&lt;/strong&gt; This release contains a fix for a security issue. Please, read the related &lt;a href="https://spring.io/blog/2021/10/26/security-reports-for-spring-framework-spring-data-rest-spring-amqp-and-spring-cloud-openfeign"&gt;announcement&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.12&lt;/code&gt; is available now.&lt;/p&gt;
-&lt;p&gt;Spring Framework &lt;code&gt;5.3.12&lt;/code&gt; is a follow-up of the recent &lt;code&gt;5.3.11&lt;/code&gt; release fixing &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.12"&gt;2 regressions&lt;/a&gt; in time for the Spring Boot releases.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.12/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
