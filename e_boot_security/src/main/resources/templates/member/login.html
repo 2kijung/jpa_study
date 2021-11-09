@@ -14,16 +14,28 @@
 <body>
 	<h1>로그인</h1>
 	<hr>
-	<form action="/member/login" method="post">
+	<form th:action="@{/member/login}" method="post">
 		<span class="valid-msg" th:if="${message}" th:text="${message}"></span>
 		<span class='tit'>ID : </span>
 		<input type="text" name="userId" id="userId">
 		<span class='tit'>Password : </span>
 		<input type="password" name="password" id="password">
 		<button>로그인</button>
+		<div class="social-login">
+			<button type="button" onclick="window.location.href='/oauth2/authorization/google'"
+					style="width: 150px; height: 40px; background:red; color:white">
+				Google login
+			</button>
+		</div>
+		<input type="checkbox" id="rememberMe" name="remember-me" checked="checked">
+		<label for="rememberMe">로그인 유지</label>
 	</form>
 
 
+<script type="text/javascript">
+	
+	
+</script>
 
 
 

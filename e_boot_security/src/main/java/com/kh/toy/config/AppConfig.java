@@ -31,22 +31,4 @@ public class AppConfig {
 	public PasswordEncoder passwordEncoder() {
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	}
-	
-	@Bean
-	public CommonsMultipartResolver multipartResolver() {
-		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxInMemorySize(10485760);
-		multipartResolver.setMaxUploadSize(10485760);
-		return multipartResolver;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

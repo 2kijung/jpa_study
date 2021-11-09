@@ -133,24 +133,6 @@ public class MemberController {
 	@GetMapping("login")
 	public void login() {}
 	
-	//로그인 실행 메서드
-	//메서드명 : loginImpl
-	//재지정할 jsp : mypage
-	
-	@PostMapping("login")
-	public String loginImpl(Member member, HttpSession session, RedirectAttributes redirctAttr) {
-		
-		Member certifiedUser = memberService.authenticateUser(member);
-		
-		if(certifiedUser == null) {
-			redirctAttr.addFlashAttribute("message", "아이디나 비밀번호가 정확하지 않습니다.");
-			return "redirect:/member/login";
-		}
-		
-		session.setAttribute("authentication", certifiedUser);
-		return "redirect:/member/mypage";
-	}
-	
 	@GetMapping("mypage")
 	public String mypage(@CookieValue(name = "JSESSIONID", required = false) String sessionId
 								 ,@SessionAttribute(name = "authentication", required = false) Member member

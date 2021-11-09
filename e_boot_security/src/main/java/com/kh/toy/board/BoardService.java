@@ -79,10 +79,18 @@ public class BoardService{
 		
 		boardEntity.getFileInfos().removeIf(e -> {
 			if(removeFlIdx.contains(e.getFlIdx())) {
+				e.setIsDel(true);
 				util.deleteFile(e.getDownloadPath());
 				return true;
 			}
 			return false;
+		});
+		
+		files.forEach( e -> {
+			if(!e.isEmpty()) {
+				FileInfo file = util.fileUpload(e);
+				boardEntity.getFileInfos().add(file);
+			}
 		});
 	}
 	

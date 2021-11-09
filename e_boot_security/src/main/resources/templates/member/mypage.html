@@ -5,14 +5,14 @@
 </head>
 <body>
 <h1>마이페이지</h1>
-<table border="1" th:object="${session.authentication}">
+<table border="1" th:object="${#authentication.principal}">
 	<tr>
 		<th>아이디</th>
-		<td th:text="*{userId}"></td>
+		<td th:text="${#authentication.name}"></td>
 	</tr>
 	<tr>
 		<th>비밀번호</th>
-		<td th:text="*{password}"></td>
+		<td th:text="*{member.password}"></td>
 	</tr>
 	<tr>
 		<th>전화번호</th>

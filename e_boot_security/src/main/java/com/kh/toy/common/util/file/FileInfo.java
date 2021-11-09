@@ -1,5 +1,6 @@
 package com.kh.toy.common.util.file;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -39,7 +40,7 @@ public class FileInfo{
 	}
 	
 	public String getDownloadPath() {
-		return Config.UPLOAD_PATH.DESC + savePath+ renameFileName;
+		return Config.UPLOAD_PATH.DESC + savePath + renameFileName;
 	}
 
 	

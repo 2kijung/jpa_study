@@ -49,12 +49,11 @@ public class MemberControllerTest {
 	@Test
 	@DisplayName("이메일 발송 이후 회원 가입")
 	public void joinImpl() throws Exception{
-		
 		for (int i = 0; i < 10; i++) {
 			JoinForm joinForm = new JoinForm();
 			joinForm.setUserId("test" + i);
 			joinForm.setPassword("123qwe!@#");
-			joinForm.setEmail("azimemory@gmail.com");
+			joinForm.setEmail("dlrlwjd1313@gmail.com");
 			joinForm.setTell("010-2222-3333");
 			
 			mockMvc.perform(get("/member/join-impl/1234")
@@ -63,8 +62,6 @@ public class MemberControllerTest {
 			.andExpect(status().is3xxRedirection())
 			.andDo(print());
 		}
-		
-		
 	}
 	
 	@Test

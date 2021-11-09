@@ -59,20 +59,20 @@ public class FileUtil {
 
 		String savePath = createSubPath();
 		
-		FileInfo FileInfo = new FileInfo();			
-		FileInfo.setOriginFileName(originFileName);
-		FileInfo.setRenameFileName(renameFileName);
-		FileInfo.setSavePath(savePath);
+		FileInfo fileInfo = new FileInfo();			
+		fileInfo.setOriginFileName(originFileName);
+		fileInfo.setRenameFileName(renameFileName);
+		fileInfo.setSavePath(savePath);
 		
-		return FileInfo;
+		return fileInfo;
 	}
-	
 	
 	public void deleteFile(String path) {
 		File file = new File(path);
 		System.out.println(file);
 		file.delete();
 	}
+	
 	
 	
 	

@@ -1,7 +1,6 @@
 package com.kh.toy.member.validator;
 
 import com.kh.toy.member.Member;
-
 import lombok.Data;
 
 @Data
@@ -15,11 +14,9 @@ public class JoinForm {
 	public Member convertToMember() {
 		Member member = new Member();
 		member.setUserId(userId);
-		member.setPassword(password);
 		member.setTell(tell);
+		member.setPassword(password);
 		member.setEmail(email);
 		return member;
 	}
-	
-	
 }

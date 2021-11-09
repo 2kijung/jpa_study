@@ -37,40 +37,38 @@ input[type=submit]{
 <body>
 <h1>회원 가입 양식</h1>
     <form th:object="${joinForm}"
-    	action="/member/join" method="post" id="frm_join" >
+    	th:action="@{/member/join}" method="post" id="frm_join" >
      <table border="1">
         <tr>
            <td>ID : </td>
            <td >
            	  <input th:unless="${#fields.hasErrors('userId')}" type="text" name="userId" id="userId" 
-           	  th:value="*{#fields.hasErrors('userId') ? '' : userId}" size="10" required />
-         	  
-
+           	  		 th:value="*{#fields.hasErrors('userId') ? '' : userId}" size="10" required />
+           	  
            	  <button type="button" id="btnIdCheck">check</button>
            	  <span th:unless="${#fields.hasErrors('userId')}" id="idCheck" class="valid-msg"></span>
-           	  <span th:if="${#fields.hasErrors('userId')}"th:errors="*{userId}"
-           	   id="id-confirm" class="valid-msg"></span>
+           	  <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" 
+           	  		id="id-confirm" class="valid-msg"></span>
            </td>
         </tr>
         <tr>
            <td>PASSWORD : </td>
            <td>
            	  <input type="password" name="password" id="password" 
-           	  th:value="*{#fields.hasErrors('password') ? '' : password}"
-           	  placeholder="영어,숫자,특수문자 조합의 8글자 이상의 문자열입니다." /> 
-           	  <span th:if="${#fields.hasErrors('password')}"th:errors="*{password}"
-           	   id="pw-confirm" class="valid-msg"></span>
+           	  	th:value="*{#fields.hasErrors('password') ? '' : password}"
+           	  	placeholder="영어,숫자,특수문자 조합의 8글자 이상의 문자열입니다." /> 
+           	  <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" 
+           	  		id="pw-confirm" class="valid-msg"></span>
            </td>
         </tr>
         <tr>
            <td>휴대폰번호 : </td>
            <td>
-           	  <input id="tell" type="tel" name="tell" placeholder="숫자만 입력하세요"  
-           	  th:value="*{#fields.hasErrors('tell') ? '' : tell}"  required/>
-           	  <span th:if="${#fields.hasErrors('tell')}" 
-			           	  th:errors="*{tell}"
-			           	  id="tell-confirm" 
-			           	  class="valid-msg"></span>
+           	  <input id="tell" type="tel" name="tell" 
+           	  	th:value="*{#fields.hasErrors('tell') ? '' : tell}"
+           	  	placeholder="숫자만 입력하세요"  />
+           	  <span th:if="${#fields.hasErrors('tell')}" th:errors="*{tell}" 
+           	  		id="tell-confirm" class="valid-msg"></span>
            </td>
         </tr>
         <tr>
@@ -83,9 +81,9 @@ input[type=submit]{
            <td colspan="2"> 
               <input type="submit" value="가입" />
            </td>
-       </tr>
-   </table>
-  </form>
+       	</tr>
+   	  </table>
+  	</form>
 
  <script type="text/javascript" src="/js/member/joinForm.js"></script>
 

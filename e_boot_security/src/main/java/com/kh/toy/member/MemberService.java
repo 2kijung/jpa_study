@@ -38,21 +38,8 @@ public class MemberService implements UserDetailsService{
 	@Transactional
 	public void persistMember(JoinForm form) {
 		Member member = form.convertToMember();
-		member.setGrade("일반");
 		member.setPassword(passwordEncoder.encode(form.getPassword()));
 		memberRepository.save(member);
-	}
-
-	public Member authenticateUser(Member member) {
-		Member memberEntity = memberRepository.findById(member.getUserId())
-								.orElse(null);
-		
-		if(memberEntity == null) return null;
-		if(passwordEncoder.matches(member.getPassword(), memberEntity.getPassword())) {
-			return memberEntity;
-		}
-		
-		return null;
 	}
 
 	public boolean existsMemberById(String userId) {

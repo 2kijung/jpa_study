@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.toy.member.Member;
+import com.kh.toy.member.MemberAccount;
 
 import lombok.RequiredArgsConstructor;
 
@@ -33,12 +35,12 @@ public class BoardController {
 	@PostMapping("upload")
 	public String uploadBoard(
 				@RequestParam List<MultipartFile> files
-				,@SessionAttribute("authentication") Member member
+				,@AuthenticationPrincipal MemberAccount memberAccount
 				, Board board
 					
 			) {
 		
-		board.setMember(member);
+		board.setMember(memberAccount.getMember());
 		boardService.persistBoard(files, board);
 		return "redirect:/";
 	}
